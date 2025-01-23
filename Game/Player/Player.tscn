@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=3 uid="uid://dmj31wmlnhadd"]
+
+[ext_resource type="Script" uid="uid://cjkn1tj1rkts7" path="res://Game/Player/Player.cs" id="2_2nirr"]
+[ext_resource type="Texture2D" uid="uid://cy677yovrno24" path="res://Assets/2D/player.png" id="3_kt3un"]
+[ext_resource type="Texture2D" uid="uid://cxom7f3h20qb" path="res://Assets/2D/gun.png" id="4_o2hno"]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_fd82q"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+properties/1/path = NodePath("Gun:rotation")
+properties/1/spawn = true
+properties/1/replication_mode = 1
+properties/2/path = NodePath("Gun/GunSprite:flip_v")
+properties/2/spawn = true
+properties/2/replication_mode = 2
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_te8bf"]
+size = Vector2(7.8, 7.9)
+
+[node name="Player" type="CharacterBody2D"]
+collision_layer = 2
+script = ExtResource("2_2nirr")
+
+[node name="Gun" type="Node2D" parent="."]
+unique_name_in_owner = true
+
+[node name="GunSprite" type="Sprite2D" parent="Gun"]
+unique_name_in_owner = true
+position = Vector2(8, 0)
+texture = ExtResource("4_o2hno")
+
+[node name="GunMuzzle" type="Marker2D" parent="Gun/GunSprite"]
+unique_name_in_owner = true
+position = Vector2(3, 0)
+
+[node name="Sync" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_fd82q")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("3_kt3un")
+
+[node name="Shape" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.05)
+shape = SubResource("RectangleShape2D_te8bf")

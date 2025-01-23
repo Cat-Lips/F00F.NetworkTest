@@ -1,0 +1,13 @@
+[gd_scene load_steps=5 format=3 uid="uid://c51cmc0igphht"]
+
+[ext_resource type="PackedScene" uid="uid://htangrc6icis" path="res://Game/World/Levels/Level0.tscn" id="2_lsgo1"]
+[ext_resource type="Script" uid="uid://q78fdus7p11a" path="res://Game/World/World.cs" id="2_x10xe"]
+[ext_resource type="PackedScene" uid="uid://cc56e3gkqlqs0" path="res://Game/World/Levels/Level1.tscn" id="3_16coc"]
+[ext_resource type="PackedScene" uid="uid://bd18mtqln122f" path="res://Game/World/Levels/Level2.tscn" id="3_t1jqs"]
+
+[node name="World" type="Node"]
+script = ExtResource("2_x10xe")
+Levels = [ExtResource("2_lsgo1"), ExtResource("3_16coc"), ExtResource("3_t1jqs")]
+
+[node name="Camera" type="Camera2D" parent="."]
+position = Vector2(160, 90)
