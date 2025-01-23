@@ -1,0 +1,15 @@
+[gd_scene load_steps=5 format=3 uid="uid://bqu0lpx7ies7r"]
+
+[ext_resource type="PackedScene" uid="uid://bmt0x2k32vj57" path="res://Game/World/World.tscn" id="1_2yvni"]
+[ext_resource type="Script" path="res://Game/Main.cs" id="1_8mkya"]
+[ext_resource type="PackedScene" uid="uid://sjrvyfyw2t3m" path="res://addons/F00F.Core/Network/Network.tscn" id="2_da8ed"]
+[ext_resource type="PackedScene" uid="uid://ddtfiow5epwm7" path="res://Game/UI/UI.tscn" id="5_w5mr5"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_8mkya")
+
+[node name="Network" parent="." instance=ExtResource("2_da8ed")]
+
+[node name="World" parent="." instance=ExtResource("1_2yvni")]
+
+[node name="UI" parent="." instance=ExtResource("5_w5mr5")]
