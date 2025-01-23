@@ -1,0 +1,12 @@
+[gd_scene load_steps=6 format=3 uid="uid://hpxg6wbhf0kx"]
+
+[ext_resource type="PackedScene" uid="uid://c33ku36h6ud0h" path="res://addons/F00F.Core/Common/2D/Game2D.tscn" id="1_h205l"]
+[ext_resource type="Script" uid="uid://7ne3iflhckld" path="res://Game/World/World.cs" id="2_x10xe"]
+[ext_resource type="PackedScene" uid="uid://cc56e3gkqlqs0" path="res://Game/World/Levels/Level1.tscn" id="3_16coc"]
+[ext_resource type="PackedScene" uid="uid://6w86qobko7qu" path="res://Game/World/Levels/Level2.tscn" id="4_ov2xx"]
+[ext_resource type="PackedScene" uid="uid://dkfvqbexcmqep" path="res://Game/World/Levels/Level3.tscn" id="5_5xt6m"]
+
+[node name="World" instance=ExtResource("1_h205l")]
+script = ExtResource("2_x10xe")
+Level = 1
+Levels = [ExtResource("3_16coc"), ExtResource("4_ov2xx"), ExtResource("5_5xt6m")]
