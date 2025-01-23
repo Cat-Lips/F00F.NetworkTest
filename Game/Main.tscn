@@ -1,0 +1,10 @@
+[gd_scene load_steps=4 format=3 uid="uid://ditdusijonnql"]
+
+[ext_resource type="Script" uid="uid://bxm4af43jnto5" path="res://Game/Main.cs" id="1_8mkya"]
+[ext_resource type="PackedScene" uid="uid://cc537g3230cne" path="res://addons/F00F.Core/Game.tscn" id="1_f0iku"]
+[ext_resource type="PackedScene" uid="uid://c51cmc0igphht" path="res://Game/World/World.tscn" id="3_w1egk"]
+
+[node name="Root" instance=ExtResource("1_f0iku")]
+script = ExtResource("1_8mkya")
+
+[node name="World" parent="." index="1" instance=ExtResource("3_w1egk")]

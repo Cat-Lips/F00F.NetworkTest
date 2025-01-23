@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://c51cmc0igphht"]
+
+[ext_resource type="Script" uid="uid://q78fdus7p11a" path="res://Game/World/World.cs" id="2_x10xe"]
+[ext_resource type="PackedScene" uid="uid://cc56e3gkqlqs0" path="res://Game/World/Levels/Level1.tscn" id="3_16coc"]
+
+[node name="World" instance=ExtResource("3_16coc")]
+script = ExtResource("2_x10xe")
+
+[node name="Camera" type="Camera2D" parent="." index="0"]
+position = Vector2(160, 90)
