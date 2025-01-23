@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://bsk6ccglt16jf"]
+
+[ext_resource type="Script" uid="uid://lr16rk2tm2rc" path="res://Game/Player/Bullet.cs" id="1_r033m"]
+[ext_resource type="Texture2D" uid="uid://cy677yovrno24" path="res://Assets/2D/player.png" id="2_kc0mg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r033m"]
+size = Vector2(1, 1)
+
+[node name="Bullet" type="Area2D"]
+collision_mask = 3
+script = ExtResource("1_r033m")
+
+[node name="Shape" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_r033m")
+
+[node name="Sprite" type="Sprite2D" parent="Shape"]
+modulate = Color(1, 1, 0, 1)
+texture = ExtResource("2_kc0mg")
+region_enabled = true
+region_rect = Rect2(3.5, 3.5, 1, 1)
